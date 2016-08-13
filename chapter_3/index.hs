@@ -84,11 +84,3 @@ showEach xs = [show x | x <- xs]
 headWithCase' :: [a] -> a
 headWithCase' xs = case xs of [] -> error "No HEAD dumby."
                               (x:_) -> x
-
-maximum' :: [a] -> a
-maximum' [] = "Empty list"
-maximum' [x] = x
-maximum' (x:xs) 
-        | x > maxTail = 0
-        | otherwise = maxTail
-    where maxTail = maximum' xs
