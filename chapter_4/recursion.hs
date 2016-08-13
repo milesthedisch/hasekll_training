@@ -1,7 +1,12 @@
-maximum' :: [a] -> a
-maximum' [] = "Empty list"
+maximum' :: (Num a, Ord a) => [a] -> a
+maximum' [] = error "Empty list"
 maximum' [x] = x
-maximum' (x:xs) 
-        | x > maxTail = 0
-        | otherwise = maxTail
+maximum' (x:xs)   
+    | x > maxTail = x  
+    | otherwise = maxTail  
     where maxTail = maximum' xs
+
+maximum'' :: (Num a, Ord a) => [a] -> a
+maximum'' [] = error "Empty list"
+maximum'' [x] = x
+maximum'' (x:xs) = max x (maximum'' xs)
