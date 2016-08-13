@@ -16,7 +16,9 @@
 
   The primary resource of the material is from [learnyouahaskell](http://www.learnyouahaskell.com) and [standfords intro to haskell](http://www.seas.upenn.edu/~cis194/spring13/lectures/01-intro.html). 
 
-### Learnyouahaskell :: Chapter 1 [*Chapter 1*](./chapter_1)
+===
+
+### Learnyouahaskell :: [*Chapter 1*](./chapter_1)
 
   The first Chapter seems to be pretty basic and just talks how to get started on haskell.
 
@@ -26,7 +28,20 @@
 
   It ends of list comprehensions which seem a bit weird to me coming from a JS background, but I think I just need to play around a bit more with it.
 
-### Learnyouahaskell :: [*Chapter 3*](./chapter_3)
+### Learnyouahaskell :: [*Chapter 3*](./chapter_2)
+
+  Chapter 3 is really explaining what types and type class's are. There is not much to actually do but just read most of the chapter.
+
+### Learnyouahaskell :: [*Chapter 4*](./chapter_3)
+
+  Chapter 4 dives into more of the function syntax. Cases, pattern matching, let, and where. I like this chapter cause its start to get more into the coding.
+
+### Learnyouahaskell :: [*Chapter 5*](./chapter_4)
+
+#### [Recursion](./chapter_4/recursion.hs) 
+
+  Im familiar with recursion but have always found it a little bit difficult. Haskell seems to use recusive functions a lot, because in Haskell there are no loops; loops like we have in Java and Javascript and C++. This is going to be a mind shift...
+
 
 
 
