@@ -54,6 +54,9 @@ elem' a (x:xs)
 multThree :: (Num a) => a -> a -> a -> a
 multThree x y z = x * y * z
 
+multTwo :: (Num a) => a -> a -> a
+multTwo = multThree 1
+
 multByNine :: (Num a) => a -> a -> a
 multByNine = multThree 9
 
@@ -81,5 +84,47 @@ isSetOfTen' = (`elem` [1..10])
 zipWith' :: (a -> b -> c) -> [a] -> [b] -> [c]  
 zipWith' _ [] _ = []  
 zipWith' _ _ [] = []  
-zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys  
+zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys 
+
+applyTwice :: (a -> a) -> a -> a
+applyTwice f x = f (f x) 
+
+applyThrice :: (a -> a) -> a -> a
+applyThrice f x = f (f (f x))
+
+flip' :: (a -> b -> c) -> b -> a -> c
+--      a b     b a [returns] c
+flip' f x y = f y x
+
+map' :: (a -> b) -> [a] -> [b]  
+map' _ [] = []  
+map' f (x:xs) = f x : map' f xs  
+
+quicksort' :: (Ord a) => [a] -> [a]
+quicksort' [] = []
+quicksort' (x:xs) =
+    let smaller = quicksort' [ a | a <- xs, a <= x] 
+        bigger = quicksort' [ a | a <- xs, a > x]
+    in smaller ++ [x] ++ bigger
+
+quicksort'' :: (Ord a) => [a] -> [a]
+quicksort'' [] = []
+quicksort'' (x:xs) =
+    let smaller = quicksort' (filter' (<= x) xs)
+        bigger = quicksort' (filter' (> x) xs)
+    in smaller ++ [x] ++ bigger
+
+quicksortRev :: (Ord a) => [a] -> [a]
+quicksortRev [] = []
+quicksortRev x = reverse' (quicksort' x)
+
+
+filter' :: (a -> Bool) -> [a] -> [a]  
+filter' _ [] = []
+filter' f (x:xs) 
+    | f x = x:filter' f xs
+    | otherwise = filter' f xs
+
+modThree :: (Integral a) => a -> Bool
+modThree x = mod x 3 == 0 
 
