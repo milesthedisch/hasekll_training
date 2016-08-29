@@ -155,3 +155,31 @@ numLongChains' = length (filter' isLongThan15 (map chain' [1..100]))
 flip' :: (a -> b -> c) -> b -> a -> c  
 flip' f = \x y -> f y x 
 
+-- Folds are like reduce in JS
+-- This would be the equivalent of 
+-- const sum = (list) => {
+--      return list.reduce((acc, x) => {
+--         return acc + x
+--      }, 0);
+-- }
+sum' :: (Num a) => [a] -> a
+sum' xs = foldl (\acc x -> acc + x) 0 xs 
+
+diffrence :: (Num a) => [a] -> a
+diffrence = foldl (-) 0
+
+sum'' :: (Num a) => [a] -> a
+sum'' = foldl (+) 0
+
+-- In JS
+-- const sum = (list, y) => {
+--      return list.reduce((acc, x) => {
+--         return x == y || acc
+--      }, False);
+-- }
+elem' :: (Eq a) => a -> [a] -> Bool
+elem' y ys = foldl (\acc x -> if x == y then True else acc) False ys
+
+
+
+
