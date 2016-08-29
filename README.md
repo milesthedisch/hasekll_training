@@ -42,7 +42,11 @@
 
   Im familiar with recursion but have always found it a little bit difficult. Haskell seems to use recusive functions a lot, because in Haskell there are no loops; loops like we have in Java and Javascript and C++. This is going to be a mind shift...
 
-
+#### [Higher-Order functions]
+  
+  In this chapter of the book the author trys to give us a understanding of currying functions. I've used currying in JS before, but not every function declared. In Haskell all function are curried. Instead of having params we each parameter is a function that returns another function only if the last function is specified to return a value. It quite easy to nice to use currying but im still unfamiliar to when I would need to use it in a slightly diffrent way.
+  
+  This chapter also goes over lamdas. Which are anoymus functions. This actually quite like JS where we use map and reduce for things.
 
 
 
