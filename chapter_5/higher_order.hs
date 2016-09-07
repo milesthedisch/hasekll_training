@@ -152,8 +152,8 @@ numLongChains' = length (filter' isLongThan15 (map chain' [1..100]))
 -- This makes no sense to me to write it this way.
 -- But this is a way to write it.
 -- Why you so confuse haskell :^/O
-flip' :: (a -> b -> c) -> b -> a -> c  
-flip' f = \x y -> f y x 
+flip'' :: (a -> b -> c) -> b -> a -> c  
+flip'' f = \x y -> f y x 
 
 -- Folds are like reduce in JS
 -- This would be the equivalent of 
@@ -177,8 +177,20 @@ sum'' = foldl (+) 0
 --         return x == y || acc
 --      }, False);
 -- }
-elem' :: (Eq a) => a -> [a] -> Bool
-elem' y ys = foldl (\acc x -> if x == y then True else acc) False ys
+
+elem'' :: (Eq a) => a -> [a] -> Bool
+elem'' y ys = foldl (\acc x -> if x == y then True else acc) False ys
+
+-- In JS 
+-- const map = (list, cb) => {
+--   list.reduce(function(acc, x){
+--      acc.push(cb(x));
+--      return acc;
+--   }, [])
+-- }
+
+map'' :: (a -> b) -> [a] -> [b]
+map'' f xs = foldr (\x acc -> f x : acc) [] xs
 
 
 
