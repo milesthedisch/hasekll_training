@@ -168,11 +168,18 @@ sum' xs = foldl (\acc x -> acc + x) 0 xs
 diffrence :: (Num a) => [a] -> a
 diffrence = foldl (-) 0
 
+-- In JS
+-- const sum = (list, y) => {
+--      return list.reduce((acc, x) => {
+--         return acc + x;
+--      }, False);
+-- }
+
 sum'' :: (Num a) => [a] -> a
 sum'' = foldl (+) 0
 
 -- In JS
--- const sum = (list, y) => {
+-- const elem = (list, y) => {
 --      return list.reduce((acc, x) => {
 --         return x == y || acc
 --      }, False);
@@ -191,6 +198,34 @@ elem'' y ys = foldl (\acc x -> if x == y then True else acc) False ys
 
 map'' :: (a -> b) -> [a] -> [b]
 map'' f xs = foldr (\x acc -> f x : acc) [] xs
+
+map''' :: (a -> b) -> [a] -> [b]
+map''' f xs = foldl (\acc x -> acc ++ [f x]) [] xs
+
+maximum''' :: (Ord a) => [a] -> a
+maximum''' = foldr1 (\x acc -> if x > acc then x else acc)
+
+reverse''' :: [a] -> [a]
+reverse''' = foldl (\acc x -> x : acc) []
+
+product' :: (Num a) => [a] -> a  
+product' = foldr1 (*) 
+
+_filter' :: (a -> Bool) -> [a] -> [a]  
+_filter' p = foldr (\x acc -> if p x then x : acc else acc) [] 
+
+head' :: [a] -> a  
+head' = foldr1 (\x _ -> x)
+
+last'' :: [a] -> a
+last'' = foldl1 (\_ x -> x)
+
+sqrtSums :: Int
+sqrtSums = length (takeWhile (<1000) (scanl1 (+) (map sqrt [1..]))) + 1  
+
+
+
+
 
 
 

@@ -48,6 +48,11 @@
   
   This chapter also goes over lamdas. Which are anoymus functions. This actually quite like JS where we use map and reduce for things.
 
+#### [Folds and maps]
+
+  In Haskell we do recursion quiet a lot to iterarte over lists. Becasue we do this so much the core Haskell has some nice functions to do that for us.
+  Haskell's core gives us Foldables and Mappables. Which are essenstially things we can iterate over and apply function too. Maps a functions that take a list and return a list folds are functions that take a list and an optional starting point and reduce a list to one value. Compared to JS they are very similar. The concepts still apply but the syntax is quiet different. 
+
 
 
 
