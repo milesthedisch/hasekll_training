@@ -28,7 +28,7 @@ abs' x = if (x < 0) then x - (x * 2) else x
 -- (.) :: (b -> c) -> (a -> b) -> a -> c  
 -- f . g = \x -> f (g x)  
 
--- f (g (z x)) === (f . g . z) x
+-- (f (g (z x))) === (f . g . z) x
 -- we can use currying and write the function like f . g . z    (x is curried!)
 
 -- map (\x -> negate (abs x)) [5,-3,-6,7,-3,2,-19,24]
