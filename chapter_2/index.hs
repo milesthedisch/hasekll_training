@@ -36,7 +36,7 @@ sayMe 4 = "Four!"
 sayMe 5 = "Five!"  
 sayMe _ = "Not between 1 and 5" 
 
-let rightTriangles = [(a,b,c) | c <- [1..10], b <- [1..10], a <- [1..10], c^2 = a^2 + b^2]
+-- let rightTriangles = [(a,b,c) | c <- [1..10], b <- [1..10], a <- [1..10], c^2 = a^2 + b^2]
 
 -- This bit is refactored to enforce that c is always going to larger than b and a is going to be smaller than b.
 let rightTriangles' = [(a,b,c) | c <- [1..10], b <- [1..c], a <- [1..b], c^2 = a^2 + b^2]
