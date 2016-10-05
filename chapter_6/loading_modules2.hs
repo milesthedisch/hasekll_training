@@ -15,7 +15,17 @@ nub l = nub' l []
       | y `elem` xs = nub' ys xs
       | otherwise = y : nub' ys (y:xs)
 
+-- IN JS
+-- function nub(list) {
+--  return list.reduce((x, y, i, col) => {
+--    if (!~x.indexOf(y)) {
+--      x.push(y);
+--    }
+--    return x;
+--  }, []);
+-- } 
+
 nub'' :: (Eq a) => [a] -> [a]
 nub'' [] = []
 nub'' (x:xs) = x : nub'' (filter (/= x) xs)
- 
+  
